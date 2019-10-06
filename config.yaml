@@ -1,4 +1,6 @@
 http:
-  port: 8000
+  port: 443
   host: "localhost"
   dir: "./static/"
+  certificate: "./tls.crt"
+  tlskey: "./tls.key"

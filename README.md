@@ -1,4 +1,4 @@
-<h1>Tugas 6 Netpro</h1>
+<h1>Tugas 7 Netpro</h1>
 
 <center>
 <h2>Anggota Kelompok</h2>
@@ -15,7 +15,7 @@
 
 <h4><li>Simple Web Server</li></h4>
 <p align="justify">
-Just clone it to your local machine and type "go run config.go webServer.go" and you machine turn into a web Server
+Just clone it to your local machine and type "sudo go run config.go webServer.go" and you machine turn into a web Server
 <p>
 
 </ol>

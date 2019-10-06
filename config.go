@@ -10,15 +10,19 @@ import (
 )
 
 const (
-	HTTP_PORT string = "http.port"
-	HTTP_HOST string = "http.host"
-	HTTP_DIR  string = "http.dir"
+	HTTP_PORT   string = "http.port"
+	HTTP_HOST   string = "http.host"
+	HTTP_DIR    string = "http.dir"
+	HTTP_CERT   string = "http.certificate"
+	HTTP_TLSKEY string = "http.tlskey"
 )
 
 type HttpConfig struct {
-	Port int
-	Host string
-	Dir  string
+	Port        int
+	Host        string
+	Dir         string
+	Certificate string
+	TLSKey      string
 }
 
 type Config struct {
@@ -29,6 +33,8 @@ func setDefaults(v *viper.Viper) {
 	v.SetDefault(HTTP_PORT, 8000)
 	v.SetDefault(HTTP_HOST, "localhost")
 	v.SetDefault(HTTP_DIR, "./static/")
+	v.SetDefault(HTTP_CERT, "./tls.crt")
+	v.SetDefault(HTTP_TLSKEY, "./tls.key")
 }
 
 func loadConfPath(v *viper.Viper, path string) error {
@@ -47,9 +53,11 @@ func loadConfPath(v *viper.Viper, path string) error {
 
 func (c *Config) HttpCfg() *HttpConfig {
 	return &HttpConfig{
-		Port: c.GetInt(HTTP_PORT),
-		Host: c.GetString(HTTP_HOST),
-		Dir:  c.GetString(HTTP_DIR),
+		Port:        c.GetInt(HTTP_PORT),
+		Host:        c.GetString(HTTP_HOST),
+		Dir:         c.GetString(HTTP_DIR),
+		Certificate: c.GetString(HTTP_CERT),
+		TLSKey:      c.GetString(HTTP_TLSKEY),
 	}
 }
 
