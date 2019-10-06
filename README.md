@@ -4,7 +4,7 @@
 <h2>Anggota Kelompok</h2>
 <ol>
     <li>Hafidzil Khairi (1301160171)</li>
-    <li>Yola Adipratama</li>
+    <li>Yola Adipratama (1301144156)</li>
 </ol>
 <br/>
 <br/>
